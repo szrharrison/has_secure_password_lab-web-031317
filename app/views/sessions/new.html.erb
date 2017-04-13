@@ -1,0 +1,17 @@
+<h1>Log-In</h1>
+<%= form_tag '/sessions' do %>
+  <%= label_tag :"user[name]", "Name:" %> <br>
+  <%= text_field_tag :"user[name]" %>
+  <br>
+  <br>
+  <%= label_tag :"user[password]", "Password:" %> <br>
+  <%= password_field_tag :"user[password]" %>
+  <br>
+  <br>
+  <%= submit_tag "Log-in" %>
+<% end %>
+
+<p>Don't have an account yet?</p>
+<%= form_tag( '/users/new', {method: 'get', enforce_utf8: false} ) do %>
+  <%= submit_tag "Sign-Up", name: nil %>
+<% end %>
